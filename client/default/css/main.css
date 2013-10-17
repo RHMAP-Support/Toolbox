@@ -1,0 +1,194 @@
+@charset UTF-8;
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6 {
+  margin:0;
+  padding:0;
+}
+
+a {
+  text-decoration:none;
+}
+
+p {
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+#wrapper {
+  background-image:url(../img/background.png);
+  background-repeat:repeat-x;
+  background-color:#fff;
+  min-height:360px;
+  margin:0;
+  padding:0;
+  font-family:verdana,arial,sans-serif;
+}
+
+#indexwrapper {
+  background-color:#fff;
+  min-height:360px;
+  margin:0 auto;
+  padding:0;
+  font-family:verdana,arial,sans-serif;
+}
+
+#logo img {
+  padding:4px;
+  display: block;
+  margin: 0 auto;
+}
+
+#content {
+  padding: 30px 7px 7px 7px;
+  margin: 0 20px;
+  background-color: #eee;
+  font-size:12px;
+  position:relative;
+  top:70px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+/*.main_view {
+  display:none;
+}
+*/
+
+/*#hidden {
+  display:none;
+}
+*/
+#menu {
+  height:35px;
+  padding:5px 20px 5px 20px;
+}
+
+#menu .nav_item {
+  width:20%;
+  float:left;
+  height:35px;
+  background-image:url(../img/button_sprite.png);
+  background-position:0px 0px;
+  height: 100%;
+  float:left;
+  text-align:center;
+}
+
+#menu h2 {
+  font-size:10px;
+  padding-top:12px;
+  color:#FFF;
+  font-style:normal;
+  text-decoration:none;
+  font-weight:400;
+  line-height:10px;
+}
+
+#menu .button_active {
+  background-position:0 -100px;
+}
+
+#menuwrapper {
+/*  width:328px;
+  height: :auto;
+  margin:0;
+  padding:0;*/
+  position: absolute;
+  top:0;
+  width:100%;
+}
+
+.Button {
+    
+    -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+    background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+    
+    background-color:#33bdef;
+    
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    
+    border:1px solid #057fd0;
+    
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    
+    text-shadow:0px -1px 0px #5b6178;
+    margin:0 auto;
+    
+}
+.Button:hover {
+    
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+    background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+    
+    background-color:#019ad2;
+}
+.Button:active {
+    position:relative;
+    top:1px;
+}
+
+#submit {
+    
+    -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+    background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+    
+    background-color:#33bdef;
+    
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    
+    border:1px solid #057fd0;
+    
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    
+    text-shadow:0px -1px 0px #5b6178;
+    
+}
+.howya {
+color:orange;
+text-align:center;
+}
