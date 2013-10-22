@@ -187,6 +187,13 @@ exports.envs = function(params, callback){
   callback(undefined, env);
 }
 
-exports.health = function(params, callback){
-  callback(undefined, {status : ok});
-}
+exports.health = function(params, callback) {
+  var html = "<div>"
+  + "<p>"
+  + "Hello World"
+  + "</p>"
+  + "</div>";
+
+  return callback(undefined, html, {'Content-Type' : 'text/html'});
+};
+
