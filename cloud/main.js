@@ -191,5 +191,5 @@ exports.health = function(params, callback) {
   var html = "<div><p>Everything is Fiiiiiiine.</p></div>";
 
 //  return callback(undefined, html, {'Content-Type' : 'text/html'});
-  return callback(undefined, 'testing');
+  return callback(undefined, 'testing 1 2 3 4');
 };
