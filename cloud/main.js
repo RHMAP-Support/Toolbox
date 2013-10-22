@@ -29,6 +29,17 @@ exports.webCall = function(params, callback) {
   });
 };
 
+// tests returning html, note the custom headers being returned..
+exports.htmlCall = function(params, callback) {
+  var html = "<div>"
+  + "<p>"
+  + "Hello World"
+  + "</p>"
+  + "</div>";
+
+  return callback(undefined, html, {'Content-Type' : 'text/html'});
+};
+
 /* Sample $fh.feed call */
 exports.feedCall = function(params, callback) {
   var feedParams = {          
@@ -163,17 +174,6 @@ exports.fhdbCall = function(params, callback) {
   });   
 };
 
-// tests returning html, note the custom headers being returned..
-exports.htmlCall = function(params, callback) {
-  var html = "<div>"
-  + "<p>"
-  + "Hello World"
-  + "</p>"
-  + "</div>";
-
-  return callback(undefined, html, {'Content-Type' : 'text/html'});
-};
-
 exports.ldapCall = function(params, callback) {
   var fhldap = require('fhldap.js');
   var group = params.group === undefined ? 'Engineering' : params.group;
@@ -188,11 +188,7 @@ exports.envs = function(params, callback){
 }
 
 exports.health = function(params, callback) {
-  var html = "<div>"
-  + "<p>"
-  + "Everything is Fiiiiiiine."
-  + "</p>"
-  + "</div>";
+  var html = "<div><p>Everything is Fiiiiiiine.</p></div>";
 
   return callback(undefined, html, {'Content-Type' : 'text/html'});
 };
