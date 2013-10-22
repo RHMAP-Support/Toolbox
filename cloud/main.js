@@ -186,3 +186,7 @@ exports.envs = function(params, callback){
   var envs = process.env;
   callback(undefined, env);
 }
+
+exports.health = function(params, callback){
+  callback(undefined, {status : ok});
+}
