@@ -4,7 +4,7 @@ $fh.ready(function () {
   setUpMenuBar();
 
   var tabData = config.tabData;
-    
+
   // Add the text from tabData to the tabs
   setUpTabs(tabData);
 
@@ -23,7 +23,7 @@ $fh.ready(function () {
       $('.pageTitle').text(title);
 
       $('.main_view').hide();
-      $(targetId).show();         
+      $(targetId).show();
    
       // Trigger callback for the tab being shown
       var id = $(this).attr('id'),

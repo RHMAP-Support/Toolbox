@@ -22,6 +22,7 @@ var web = {
         amount = search_amount.find('option:selected').val(),
         search_results = $('#web_search_results').empty();
     
+    console.log("performing $fh.act webcall");
     $fh.act({
       act:'webCall',
       req: {
