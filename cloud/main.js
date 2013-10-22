@@ -190,7 +190,7 @@ exports.envs = function(params, callback){
 exports.health = function(params, callback) {
   var html = "<div>"
   + "<p>"
-  + "Hello World"
+  + "Everything is Fiiiiiiine."
   + "</p>"
   + "</div>";
 
