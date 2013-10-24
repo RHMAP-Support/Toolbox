@@ -4,7 +4,7 @@ var cache = {
   show: function (container) {
     if (!cache.initialised) {
       cache.initialised = true;
-      
+
       $('#cache_update').bind('click', function (e) {
         e.preventDefault();
         cache.update();

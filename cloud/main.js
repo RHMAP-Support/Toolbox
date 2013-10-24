@@ -69,12 +69,14 @@ exports.geoCall = function(params, callback) {
  * Example of using $fh.cache, see http://docs.feedhenry.com/wiki/Cache.
  */
 exports.cacheCall = function(params, callback) {
-    console.log("in cacheCall()");
+    console.log("in Redis acheCall()");
     var expireTime = (params.expire !== undefined && params.expire !== "") ? params.expire: 10;
     var bypass = params.bypass !== undefined ? params.bypass : false;
   
     $fh.cache({act:'load', key: 'time'}, function (err, cachedTime) {
+      // Cache does not exist.
       if (err) return callback(err);    
+
       var currentTime = Date.now();
       console.log("cachedTime: " + cachedTime);
 
