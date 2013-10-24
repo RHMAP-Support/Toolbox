@@ -17,3 +17,5 @@ install notes.txt
 client/.DS_Store
 .DS_Store
 .fhclocal/
+lazygit.sh
+.gitignore
