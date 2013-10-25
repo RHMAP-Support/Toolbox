@@ -68,7 +68,6 @@ p {
 #menu {
   height:35px;
   padding:5px 20px 5px 20px;
-  text-align:center;
 }
 
 #menu .nav_item {
@@ -90,6 +89,7 @@ p {
   text-decoration:none;
   font-weight:400;
   line-height:10px;
+  text-align:center;
 }
 
 #menu .button_active {
