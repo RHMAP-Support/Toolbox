@@ -69,25 +69,29 @@ exports.geoCall = function(params, callback) {
  * Example of using $fh.cache, see http://docs.feedhenry.com/wiki/Cache.
  */
 exports.cacheCall = function(params, callback) {
-    console.log("in Redis acheCall()");
+    console.log("in Redis cacheCall()");
     var expireTime = (params.expire !== undefined && params.expire !== "") ? params.expire: 10;
-    var bypass = params.bypass !== undefined ? params.bypass : false;
+    //var bypass = params.bypass !== undefined ? params.bypass : false;
   
     $fh.cache({act:'load', key: 'time'}, function (err, cachedTime) {
       // Cache does not exist.
-      if (err) return callback(err);    
+      if (err) return callback(err);
 
       var currentTime = Date.now();
       console.log("cachedTime: " + cachedTime);
 
-      if (bypass || cachedTime === undefined || cachedTime === null || (parseInt(cachedTime) + (expireTime * 1000)) < currentTime) {
-        $fh.cache({act: 'save', key: 'time', value: JSON.stringify(currentTime), expire: expireTime}, function (err) {          
-          var d = new Date(parseInt(currentTime));
-          return callback(err, {data: {time: d, cached: false}});
+      if (/*bypass ||*/ cachedTime === undefined || cachedTime === null || (parseInt(cachedTime) + (expireTime * 1000)) < currentTime) {
+        $fh.cache({
+          act: 'save', 
+          key: 'time', 
+          value: JSON.stringify(currentTime), expire: expireTime
+        }, function (err) {          
+          var dt = new Date(parseInt(currentTime));
+          return callback(err, {data: {time: dt, cached: false}});
         });
-      }else {
-        var d = new Date(parseInt(cachedTime));
-        return callback(undefined, {data: {time: d, cached: true}});
+      } else {
+        var dt = new Date(parseInt(cachedTime));
+        return callback(undefined, {data: {time: dt, cached: true}});
       }
     });
 };
@@ -153,20 +157,20 @@ exports.fhdbCall = function(params, callback) {
   console.log("In dbCall()");
   $fh.db({
       "act" : "create",
-      "type" : "dbtest1",
+      "type" : "ToolboxDitchTest",
       "fields" : {
-        "firstName" : "Joe",
-        "lastName" : "Bloggs",
-        "address1" : "22 Blogger Lane",
-        "address2" : "Bloggsville",
-        "country" : "Bloggland",
+        "firstName" : "Jim",
+        "lastName" : "Feedhenry",
+        "address1" : "22 FeedHenry Lane",
+        "address2" : "Henrytown",
+        "country" : "Henryland",
        "phone" : "555-123456"
       }
   }, function(err, res){
     if(err) return callback(err);
     $fh.db({
       "act" : "read",
-      "type" : "dbtest1",
+      "type" : "ToolboxDitchTest",
       "guid" : res.guid
     }, function(err, res){
       if(err) return callback(err);
