@@ -29,11 +29,10 @@ exports.webCall = function(params, callback) {
   });
 };
 
-// tests returning html, note the custom headers being returned..
 exports.htmlCall = function(params, callback) {
   var html = "<div>"
   + "<p>"
-  + "Hello World"
+  + "Howya World"
   + "</p>"
   + "</div>";
 

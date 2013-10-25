@@ -89,7 +89,6 @@ p {
   text-decoration:none;
   font-weight:400;
   line-height:10px;
-  text-align:center;
 }
 
 #menu .button_active {
@@ -192,5 +191,5 @@ p {
 }
 .howya {
 color:orange;
-text-align:center;
-}
+/*text-align:center;
+*/}
