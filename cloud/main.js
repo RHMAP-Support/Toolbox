@@ -198,3 +198,7 @@ exports.health = function(params, callback) {
 //  return callback(undefined, html, {'Content-Type' : 'text/html'});
   return callback(undefined, 'Everything is good');
 };
+
+exports.tempredis = function(params, callback) {
+};
+
