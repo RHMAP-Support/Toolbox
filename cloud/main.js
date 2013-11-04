@@ -190,10 +190,10 @@ exports.fhdbCall = function(params, callback) {
 //   });
 // };
 
-exports.envs = function(params, callback){
-  var envs = process.env;
-  callback(undefined, env);
-}
+// exports.envs = function(params, callback){
+//   var envs = process.env;
+//   callback(undefined, env);
+// }
 
 exports.health = function(params, callback) {
   var html = "<div><p>Everything is Fiiiiiiine.</p></div>";
