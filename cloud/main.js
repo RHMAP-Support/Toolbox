@@ -199,6 +199,3 @@ exports.health = function(params, callback) {
   return callback(undefined, 'Everything is good');
 };
 
-exports.tempredis = function(params, callback) {
-};
-
