@@ -189,11 +189,11 @@ p {
     text-shadow:0px -1px 0px #5b6178;
     
 }
-.howya {
+/*.howya {
 color:orange;
-/*text-align:center;
-*/}
-.OrangeButton {
+text-align:center;
+}
+*/.OrangeButton {
         
     -moz-box-shadow:inset 0px 1px 0px 0px #ffe0b5;
     -webkit-box-shadow:inset 0px 1px 0px 0px #ffe0b5;

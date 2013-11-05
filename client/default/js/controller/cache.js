@@ -20,6 +20,9 @@ var cache = {
         return false;
       });
     }
+    // Clear fields.
+    $('#cache_output').empty();
+    $('#cache_cached').empty();
   },
   
   update: function () {

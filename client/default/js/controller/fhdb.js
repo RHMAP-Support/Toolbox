@@ -12,6 +12,8 @@ var fhdb = {
         return false;
       });
     }
+    // Clear display field in case previous results are still there.
+    $('#fhdb_results').empty();
   },
   
   doFhdb: function () {
