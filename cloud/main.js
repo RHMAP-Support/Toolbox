@@ -208,7 +208,7 @@ exports.health2 = function(params, callback) {
       if(err) redis_result = err else redis_result = res;
       console.log(res);
     });
-  })};   
+  }};   
 
   var result = redis_result;
   callback(undefined, result);
