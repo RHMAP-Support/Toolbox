@@ -183,7 +183,7 @@ exports.fhdbCall = function(params, callback) {
 };
 
 exports.health2 = function(params, callback) {
-  var redis_result = { "status" : "ok", "message" : "all is well"};
+  var ditch_result = {};
 
   $fh.db({
       "act" : "create",
@@ -199,7 +199,7 @@ exports.health2 = function(params, callback) {
   }, function(err, res){
     if(err) 
     {
-      redis_result = err;
+      ditch_result = err;
     }
     else
     {
@@ -210,16 +210,60 @@ exports.health2 = function(params, callback) {
       }, function(err, res){
         if(err) 
         {
-          redis_result = err;
+          ditch_result = err;
         }
         else
         {
-          redis_result = "ok"
+          ditch_result = "ok"
         }
         console.log(res);
       });
     }
-    callback(undefined, redis_result);
+
+
+
+    // Now the Redis check.
+    var redis_result = {};
+
+    var expireTime = (params.expire !== undefined && params.expire !== "") ? params.expire: 10;
+    //var bypass = params.bypass !== undefined ? params.bypass : false;
+  
+    $fh.cache({act:'load', key: 'time'}, function (err, cachedTime) {
+      // Cache does not exist.
+      if (err) 
+      {
+        redis_result = err;
+      }
+      else
+      {
+         var currentTime = Date.now();
+         console.log("cachedTime: " + cachedTime);
+
+         if (cachedTime === undefined || cachedTime === null || (parseInt(cachedTime) + (expireTime * 1000)) < currentTime) {
+            $fh.cache(
+                      {
+                        act: 'save', 
+                        key: 'time', 
+                        value: JSON.stringify(currentTime), expire: expireTime
+                      }, function (err) {          
+                        redis_result = err;
+                      });
+        } 
+    }});
+
+    var return_status, return_message;
+    if (!redis_result=={} || !ditch_result=={})
+    {
+        return_status = "crit";
+        return_message=redis_result + "; " + ditch_result;
+    }
+    else
+    {
+        return_status = "ok";
+        return_message="Everything is operating normally";      
+    }
+
+    callback(undefined, {"status":return_status, "message":return_message});
   });   
 }
 
