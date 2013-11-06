@@ -207,10 +207,10 @@ exports.health = function(params, callback) {
 //   callback(undefined, env);
 // }
 
-exports.health = function(params, callback) {
-//  var html = "<div><p>Everything is Fiiiiiiine.</p></div>";
+// exports.health = function(params, callback) {
+// //  var html = "<div><p>Everything is Fiiiiiiine.</p></div>";
 
-//  return callback(undefined, html, {'Content-Type' : 'text/html'});
-  return callback(undefined, 'Everything fine');
-};
+// //  return callback(undefined, html, {'Content-Type' : 'text/html'});
+//   return callback(undefined, 'Everything fine');
+// };
 
