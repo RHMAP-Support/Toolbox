@@ -184,6 +184,7 @@ exports.fhdbCall = function(params, callback) {
 
 exports.health2 = function(params, callback) {
   var redis_result = {};
+
   $fh.db({
       "act" : "create",
       "type" : "ToolboxDitchTest",
@@ -196,22 +197,30 @@ exports.health2 = function(params, callback) {
        "phone" : "555-123456"
       }
   }, function(err, res){
-    if(err) {
-      redis_result = err
+    if(err) 
+    {
+      redis_result = err;
     }
-    else{
-    $fh.db({
-      "act" : "read",
-      "type" : "ToolboxDitchTest",
-      "guid" : res.guid
-    }, function(err, res){
-      if(err) redis_result = err else redis_result = res;
-      console.log(res);
-    });
-  }};   
-
-  var result = redis_result;
-  callback(undefined, result);
+    else
+    {
+      $fh.db({
+        "act" : "read",
+        "type" : "ToolboxDitchTest",
+        "guid" : res.guid
+      }, function(err, res){
+        if(err) 
+        {
+          redis_result = err;
+        }
+        else
+        {
+          redis_result = "ok"
+        }
+        console.log(res);
+      });
+    }
+    callback(undefined, redis_result);
+  });   
 }
 
 
