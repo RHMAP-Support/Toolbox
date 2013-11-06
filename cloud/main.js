@@ -183,7 +183,7 @@ exports.fhdbCall = function(params, callback) {
 };
 
 exports.health2 = function(params, callback) {
-  var redis_result = {};
+  var redis_result = { "status" : "ok", "message" : "all is well"};
 
   $fh.db({
       "act" : "create",
