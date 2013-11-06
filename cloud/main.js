@@ -3,7 +3,7 @@
  * - all parameters must be passed in a single JSON paramater.
  * - the return 'callback' method signature is 'callback (error, data)', where 'data' is a JSON object.
 */
-var util = require('util');
+//var util = require('util');
 
 /* 'configCall' server side REST API method.
  * Trivial example of pulling in a shared config file.
