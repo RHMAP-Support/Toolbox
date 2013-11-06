@@ -183,14 +183,34 @@ exports.fhdbCall = function(params, callback) {
 };
 
 exports.health2 = function(params, callback) {
-  console.log(fhdbcall());
+  var redis_result = {};
+  $fh.db({
+      "act" : "create",
+      "type" : "ToolboxDitchTest",
+      "fields" : {
+        "firstName" : "Jim",
+        "lastName" : "Feedhenry",
+        "address1" : "22 FeedHenry Road",
+        "address2" : "Henrytown",
+        "country" : "Henryland",
+       "phone" : "555-123456"
+      }
+  }, function(err, res){
+    if(err) {
+      redis_result = err
+    }
+    else{
+    $fh.db({
+      "act" : "read",
+      "type" : "ToolboxDitchTest",
+      "guid" : res.guid
+    }, function(err, res){
+      if(err) redis_result = err else redis_result = res;
+      console.log(res);
+    });
+  });   
 
-  var result = {
-    "status" : "ok",
-    "redis" : "operating normally",
-    "ditch" : "operating normally",
-    "external web service x" : "operating normally"
-}
+  var result = redis_result;
   callback(undefined, result);
 }
 
