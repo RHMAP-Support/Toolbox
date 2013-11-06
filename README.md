@@ -1,7 +1,7 @@
 Toolbox
 =======
 
-App to perform test cloud call and miscellaneous checks.  
+App to perform test cloud call and miscellaneous checks.  Based on the Node smoke test app with a few tweaks.
 
 The app works on 2 levels.  The first being as an app to be deployed on a device.  
 
@@ -10,4 +10,5 @@ These can be accessed by pressing the relevent buttons under the "Test Cloud Fun
 button.
 
 The 2nd level is as a health check.  The app exposes 3 endpoints 
-(Redis, Ditch and General Health) that are monitored in pingdom.
+(Redis, Ditch and General Health) that are monitored in Pingdom.
+

@@ -182,6 +182,18 @@ exports.fhdbCall = function(params, callback) {
   });   
 };
 
+exports.health = function(params, callback) {
+  console.log('In Health Call');
+  var result = {
+    "status" : "ok",
+    "redis" : "operating normally",
+    "ditch" : "operating normally",
+    "external web service x" : "operating normally"
+}
+  callback(undefined, result);
+}
+
+
 // exports.ldapCall = function(params, callback) {
 //   var fhldap = require('fhldap.js');
 //   var group = params.group === undefined ? 'Engineering' : params.group;
