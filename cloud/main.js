@@ -183,7 +183,8 @@ exports.fhdbCall = function(params, callback) {
 };
 
 exports.health = function(params, callback) {
-  console.log('In Health Call');
+  console.log(fhdbcall());
+
   var result = {
     "status" : "ok",
     "redis" : "operating normally",
