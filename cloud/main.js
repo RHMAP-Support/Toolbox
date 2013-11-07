@@ -17,7 +17,7 @@ exports.cacheCall = function(params, callback) {
       var currentTime = Date.now();
       console.log("cachedTime: " + cachedTime);
 
-      if (/*bypass ||*/ cachedTime === undefined || cachedTime === null || (parseInt(cachedTime) + (expireTime * 1000)) < currentTime) {
+      if (cachedTime === undefined || cachedTime === null || (parseInt(cachedTime) + (expireTime * 1000)) < currentTime) {
         $fh.cache({
           act: 'save', 
           key: 'time', 
@@ -68,6 +68,7 @@ exports.fhdbCall = function(params, callback) {
 };
 
 exports.health2 = function(params, callback) {
+  // Combination of cachecall and fhdbcall all in one.
   var ditch_result = {};
 
   $fh.db({
@@ -104,8 +105,6 @@ exports.health2 = function(params, callback) {
         console.log(res);
       });
     }
-
-
 
     // Now the Redis check.
     var redis_result = {};
@@ -158,4 +157,3 @@ exports.health = function(params, callback) {
 //  return callback(undefined, html, {'Content-Type' : 'text/html'});
   return callback(undefined, 'Everything fine');
 };
-
