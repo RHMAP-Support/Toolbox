@@ -69,6 +69,8 @@ exports.fhdbCall = function(params, callback) {
 
 exports.health2 = function(params, callback) {
   // Combination of cachecall and fhdbcall all in one.
+  console.log'-----------------------------------------------------');
+  console.log('time - ' + (new date().tostring());
   var ditch_result = {};
 
   $fh.db({
@@ -131,7 +133,8 @@ exports.health2 = function(params, callback) {
                         value: JSON.stringify(currentTime), expire: expireTime
                       }, function (err) {          
                         redis_result = err;
-                      });
+                      }
+                      );
         } 
     }});
 
