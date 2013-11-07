@@ -61,7 +61,7 @@ exports.fhdbCall = function(params, callback) {
       "guid" : res.guid
     }, function(err, res){
       if(err) return callback(err);
-      console.log(res);
+//      console.log(res);
       callback(undefined, res);
     });
   });   
@@ -105,7 +105,7 @@ exports.health2 = function(params, callback) {
         {
           ditch_result = "ok"
         }
-        console.log(res);
+        //console.log(res);
       });
     }
 
