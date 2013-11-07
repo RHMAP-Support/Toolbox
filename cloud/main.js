@@ -69,9 +69,9 @@ exports.fhdbCall = function(params, callback) {
 
 exports.health2 = function(params, callback) {
   // Combination of cachecall and fhdbcall all in one.
-  console.log'-----------------------------------------------------');
+  console.log('---------------------------------------------------------------------------');
   var date = new Date();
-  console.log(date);
+  console.log(date.toString());
   var ditch_result = {};
 
   $fh.db({
