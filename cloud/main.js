@@ -100,12 +100,13 @@ exports.health2 = function(params, callback) {
         if(err) 
         {
           ditch_result = err;
+          ditch_result = ditch_result + String.fromCharCode(13) + "DITCH HOST -> " + process.env.FH_DITCH_HOST || "";
+          ditch_result = ditch_result + String.fromCharCode(13) + "DITCH PORT -> " + process.env.FH_DITCH_PORT || "";
         }
         else
         {
           ditch_result = "ok"
         }
-        //console.log(res);
       });
     }
 
@@ -134,6 +135,8 @@ exports.health2 = function(params, callback) {
                         value: JSON.stringify(currentTime), expire: expireTime
                       }, function (err) {          
                         redis_result = err;
+                        redis_result = redis_result + String.fromCharCode(13) + "REDIS HOST -> " + process.env.FH_REDIS_HOST || "";
+                        redis_result = redis_result + String.fromCharCode(13) + "REDIS PORT -> " + process.env.FH_REDIS_PORT || "";
                       }
                       );
         } 
