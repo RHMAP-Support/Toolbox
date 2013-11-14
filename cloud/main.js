@@ -100,6 +100,8 @@ exports.health2 = function(params, callback) {
         if(err) 
         {
           ditch_result = err;
+
+        
           ditch_result = ditch_result + String.fromCharCode(13) + "DITCH HOST -> " + process.env.FH_DITCH_HOST || "";
           ditch_result = ditch_result + String.fromCharCode(13) + "DITCH PORT -> " + process.env.FH_DITCH_PORT || "";
         }
