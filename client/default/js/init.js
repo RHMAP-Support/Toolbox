@@ -1,7 +1,7 @@
 $fh.ready(function () {
 
 $fh.env({}, function(props) {
-  alert(JSON.stringify(props.uuid));
+  alert(JSON.stringify("uuid is " + props.uuid));
 });
 
   // Load the menu bar
