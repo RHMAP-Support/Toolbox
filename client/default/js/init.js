@@ -1,5 +1,9 @@
 $fh.ready(function () {
 
+$fh.env({}, function(props) {
+  alert(JSON.stringify(props));
+});
+
   // Load the menu bar
   setUpMenuBar();
 
