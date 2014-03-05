@@ -1,8 +1,15 @@
 $fh.ready(function () {
 
-$fh.env({}, function(props) {
-  alert(JSON.stringify("uuid is " + props.uuid));
+$fh.send({
+  type: 'sms',
+  to: '+3538765810747',
+  body: 'This is a message.'
+}, function() {
+  alert("message sent.");
+}, function(msg, err) {
+  alert("Send failed. Error is " + msg);
 });
+
 
   // Load the menu bar
   setUpMenuBar();
