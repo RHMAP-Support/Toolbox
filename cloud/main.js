@@ -139,6 +139,8 @@ exports.health2 = function(params, callback) {
   }, function(err, res){
     // Callback has been reached, falsify this variable so that the setTimeout above won't do anything.
     isTimedOut = false;
+    timeLog("in callback");
+
     if(err) 
     {
       timeLog('fh.db error');
@@ -154,8 +156,7 @@ exports.health2 = function(params, callback) {
         "act" : "delete",
         "type" : "ToolboxDitchTest",
         // Add some extra chars to the guid to generate an error.
-        "guid" : res.guid + "44444"
-//        "guid" : "zzzvvveeerrrwwwgggeeeqqq"
+        "guid" : res.guid
       }, function(err, data){
         // Currently, this callback is not reached if an error is thrown.
         timeLog("returned from delete");
@@ -180,6 +181,7 @@ exports.health2 = function(params, callback) {
 
   // Now the Redis check.
 
+  timeLog("now for redis");
   var redis_result = {};
 /*
   var expireTime = (params.expire !== undefined && params.expire !== "") ? params.expire: 10;
