@@ -109,6 +109,7 @@ exports.health2 = function(params, callback) {
 
   var timeout = 1000 * 5; // one second = 1000 x 1 ms
 
+/*
   // The isTimedOut variable is set to false in the $fh.db callback to if its true then the callback wasn't reached. 
   setTimeout(function() {
      if (isTimedOut) {
@@ -120,6 +121,7 @@ exports.health2 = function(params, callback) {
 
      }
    }, timeout);
+*/
 
   timeLog('About to call $fh.db create');
   // Create a temporary entry.
@@ -154,7 +156,7 @@ exports.health2 = function(params, callback) {
         "act" : "delete",
         "type" : "ToolboxDitchTest",
         // Add some extra chars to the guid to generate an error.
-        "guid" : res.guid
+        "guid" : res.guid + "3333"
       }, function(err, data){
         // Currently, this callback is not reached if an error is thrown.
         timeLog("returned from delete");
