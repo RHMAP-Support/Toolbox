@@ -5,6 +5,8 @@
 /* 'cacheCall' server side REST API method.
  * Example of using $fh.cache, see http://docs.feedhenry.com/wiki/Cache.
  */
+ /* this is a comment to demo pushing changes back to git*/
+ 
 exports.cacheCall = function(params, callback) {
     console.log("in Redis cacheCall()");
     var expireTime = (params.expire !== undefined && params.expire !== "") ? params.expire: 10;
